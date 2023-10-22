@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>note watch</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="text/javascript" href="main.js">
+</head>
+
+<body>
+    <h1>note watch</h1>
+
+    <span id="timer" class="watch"></span>
+
+    <div id="cribSheetArea">
+        <span id="currNo"></span><span id="currQ"></span><br>
+        <span id="nextNo" class="next"></span><span id="nextQ" class="next"></span>
+    </div>
+
+    <div>
+        <form>
+            <button type="button" id="mainButton" class="">Start</button>
+            <button type="button" id="stopButton" class="">Stop</button>
+            <button type="button" id="resetButton" class="">Reset</button>
+            <br>
+            <button type="button" id="prevButton" class="">&lt; Prev</button>
+            <button type="button" id="nextButton" class="">Next &gt;</button>
+        </form>
+    </div>
+
+    <label for="output"><h2>Output:</h2></label>
+    <div id="output"></div>
+
+    <label for="questions"><h2>Questions:</h2></label>
+    <textarea id="questions" class="" autocomplete="off" rows="5"></textarea>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

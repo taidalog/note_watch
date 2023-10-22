@@ -1,0 +1,25 @@
+h2 {
+  margin-bottom: 0px;
+}
+
+div {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+}
+
+textarea {
+  width: 60%
+}
+
+.next {
+  color: gray;
+}
+
+.watch {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 2rem;
+  font-weight: 500;
+}
