@@ -34,7 +34,9 @@ const start = () => {
                 document.getElementById("logs").innerHTML = ""
                 notes = notesArray.map((x, i) => [i + 1, x])
                 document.getElementById("currNote").innerText = notes[0][0] + ", " + notes[0][1]
-                document.getElementById("nextNote").innerText = notes[1][0] + ", " + notes[1][1]
+                if (notes.length > 1) {
+                    document.getElementById("nextNote").innerText = notes[1][0] + ", " + notes[1][1]
+                }
                 notesEl.disabled = true
 
                 document.getElementById("mainButton").disabled = true
