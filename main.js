@@ -28,6 +28,10 @@ const start = () => {
     } else {
         switch (runningStatus) {
             case 0: // not_started
+            case 4: // finished
+                timeToAdd = 0
+                document.getElementById("timer").innerText = millisecondsToTime(0)
+                document.getElementById("logs").innerHTML = ""
                 notes = notesArray.map((x, i) => [i + 1, x])
                 document.getElementById("currNote").innerText = notes[0][0] + ", " + notes[0][1]
                 document.getElementById("nextNote").innerText = notes[1][0] + ", " + notes[1][1]
@@ -60,8 +64,6 @@ const start = () => {
                 startTime = Date.now()
                 lastTime = startTime
                 countUp()
-                break
-            case 4: // finished
                 break
         }
     }
@@ -103,6 +105,7 @@ const reset = () => {
             timeToAdd = 0
             timer.innerText = millisecondsToTime(0)
 
+            document.getElementById("mainButton").disabled = false
             runningStatus = 0 // not_started
             console.log("running_status: " + ["0: not_started", "1: running", "2: stopping", "", "4: finished"][runningStatus])
             break
@@ -113,10 +116,10 @@ document.getElementById("resetButton").onclick = reset
 
 const next = () => {
     switch (runningStatus) {
-        case 0:
+        case 0: // not_started
             start()
             break
-        case 1:
+        case 1: // running
             const logs = document.getElementById("logs")
             logs.innerHTML = logs.innerHTML.split("<br>").filter(x => x !== "").concat([notes[0][0] + ", " + millisecondsToTime(Date.now() - lastTime) + ", " + notes[0][1]]).join("<br>")
             lastTime = Date.now()
@@ -125,7 +128,7 @@ const next = () => {
                 logs.innerHTML = logs.innerHTML.split("<br>").filter(x => x !== "").concat(["TOTAL, " + document.getElementById("timer").innerText + ", END"]).join("<br>")
                 document.getElementById("currNote").innerText = ""
                 stop()
-                document.getElementById("mainButton").disabled = true
+                document.getElementById("mainButton").disabled = false
 
                 runningStatus = 4 // finished
                 console.log("running_status: " + ["0: not_started", "1: running", "2: stopping", "", "4: finished"][runningStatus])
