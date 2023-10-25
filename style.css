@@ -76,6 +76,10 @@ button {
   padding: 0.5rem 1rem;
 }
 
+button:not(:disabled) {
+  color: #5a919a;
+}
+
 .button-item {
   margin: 10px;
 }
@@ -108,5 +112,6 @@ footer {
 }
 
 footer a {
+  color: #5a919a;
   text-decoration: none;
 }
