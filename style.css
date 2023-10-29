@@ -12,6 +12,14 @@ main {
   margin: 0 auto;
 }
 
+header {
+  display: flex;
+  flex-direction: row;
+}
+
+header p {
+  margin-left: 50px;
+}
 h1,
 h2 {
   margin: 0;
@@ -21,6 +29,7 @@ h2 {
 h1 {
   color: #65a2ac;
   font-family: 'Zen Kurenaido', sans-serif;
+  display: inline-block;
 }
 
 h2 {

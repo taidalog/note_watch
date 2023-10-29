@@ -193,3 +193,4 @@ document.getElementById("nextButton").disabled = true
 document.getElementById("nextButton").title = "Next note (>)"
 document.getElementById("notes").title = "Type or paste notes to see while speaking or something. (\\)"
 console.log("running_status: " + ["0: not_started", "1: running", "2: stopping", "", "4: finished"][runningStatus])
+alert('A new version is available at\ncronota (https://taidalog.github.io/cronota/).\nThis page will no longer maintained.\nThank you!')
